@@ -30,13 +30,13 @@
                                     },
                                     inside: {
                                         question: "Yes! Remain cloistered and live happily for the rest of your life. You win!"
-                                    },
-                            },
+                                    }
+                            }
                     },
                     no :{
                         question: "You die of gingivitis."
-                    },
-        }
+                    }
+        };
 
         console.log(story);
 
@@ -44,11 +44,11 @@
 
 
 
-        firstButton.addEventListener("click", function() {
+        firstButtonEl.addEventListener("click", function() {
             ptagEl.innerHTML = "You died."
         });
 
-        secondButton.addEventListener("click", function() {
+        secondButtonEl.addEventListener("click", function() {
             ptagEl.innerHTML = "Good choice. You live!"
         });
     </script>
