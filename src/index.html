@@ -14,10 +14,14 @@
         var yesButtonEl = document.querySelector("#yesbutton");
         var noButtonEl = document.querySelector("#nobutton");
         var ptagEl = document.querySelector("#ptag");
-        yesButtonEl.addEventListener("click", function() {
 
+        yesButtonEl.addEventListener("click", function() {
             ptagEl.innerHTML = "You died."
-        })
+        });
+
+        noButtonEl.addEventListener("click", function() {
+            ptagEl.innerHTML = "Good choice. You live!"
+        });
     </script>
 </body>
 </html>
