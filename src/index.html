@@ -11,6 +11,33 @@
     <button id="yesbutton">YES!</button> <button id="nobutton">no.</button>
 
     <script>
+
+        var story = {
+            question: "Will you brush your teeth?,
+                    yes: {
+                        question: "Healthy! What will you eat for breakfast?",
+                            candy: {
+                                question: "You die of dieabetes."
+                            },
+                            eggs: {
+                                question: "Good choice! How will you spend the rest of your day?",
+                                    outside: {
+                                        question: "You step outside and immediately fall 35,000 feet straight down into a dumpster (you live in a cloud remember!?)."
+                                    },
+                                    inside: {
+                                        question: "Yes! Remain cloistered and live happily for the rest of your life. You win!"
+                                    },
+                            },
+                    },
+                    no :{
+                        question: "You die of gingivitis."
+                    },
+        }
+
+
+
+
+
         var yesButtonEl = document.querySelector("#yesbutton");
         var noButtonEl = document.querySelector("#nobutton");
         var ptagEl = document.querySelector("#ptag");
