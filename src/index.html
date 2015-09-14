@@ -16,41 +16,55 @@
         var secondButtonEl = document.querySelector("#secondbutton");
         var ptagEl = document.querySelector("#ptag");
 
+        var currentPage = undefined;
+        var first = undefined;
+        var second = undefined;
+
+        function updatePage(page){
+            ptagEl.innerHTML = page.question;
+            var optionKeys = Object.getOwnPropertyNames(page); // get all the object properties ex. 'question', 'outside', 'inside'
+            var qIdx = optionKeys.indexOf('question'); // find 'question'
+            optionKeys.splice(qIdx, 1); // remove 'question'
+            first = optionKeys[0];
+            firstButtonEl.innerHTML = first;
+            second = optionKeys[1];
+            secondButtonEl.innerHTML = second;
+            currentPage = page;
+        }
+
         var story = {
             question: "You just woke up, what a beautiful day! Will you brush your teeth?",
-                    yes: {
-                        question: "Healthy! What will you eat for breakfast?",
-                            candy: {
-                                question: "You die of diabetes."
-                            },
-                            eggs: {
-                                question: "Good choice! How will you spend the rest of your day?",
-                                    outside: {
-                                        question: "You step outside and immediately fall 35,000 feet straight down into a dumpster (you live in a cloud remember!?)."
-                                    },
-                                    inside: {
-                                        question: "Yes! Remain cloistered and live happily for the rest of your life. You win!"
-                                    }
-                            }
+            yes: {
+                question: "Healthy! What will you eat for breakfast?",
+                candy: {
+                    question: "You die of diabetes."
+                },
+                eggs: {
+                    question: "Good choice! How will you spend the rest of your day?",
+                    outside: {
+                        question: "You step outside and immediately fall 35,000 feet straight down into a dumpster (you live in a cloud remember!?)."
                     },
-                    no :{
-                        question: "You die of gingivitis."
+                    inside: {
+                        question: "Yes! Remain cloistered and live happily for the rest of your life. You win!"
                     }
+                }
+            },
+            no :{
+                question: "You die of gingivitis."
+            }
         };
-
-        console.log(story);
-
-
-
 
 
         firstButtonEl.addEventListener("click", function() {
-            ptagEl.innerHTML = "You died."
+            updatePage(currentPage[first]);
         });
 
         secondButtonEl.addEventListener("click", function() {
-            ptagEl.innerHTML = "Good choice. You live!"
+            updatePage(currentPage[second]);
         });
+
+        updatePage(story);
+
     </script>
 </body>
 </html>
