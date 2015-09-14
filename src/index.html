@@ -7,7 +7,17 @@
 <body>
     <h1>Welcome to Bartholomew's Adventure!</h1>
     <h3>You are Bartholomew who *complicated backstory* and lives in a house on a cloud.</h3>
-    <p>You just woke up, what a beautiful day! Are you going to go outside?</p>
-    <button>YES!</button> <button>no.</button>
+    <p id="ptag">You just woke up, what a beautiful day! Are you going to go outside?</p>
+    <button id="yesbutton">YES!</button> <button id="nobutton">no.</button>
+
+    <script>
+        var yesButtonEl = document.querySelector("#yesbutton");
+        var noButtonEl = document.querySelector("#nobutton");
+        var ptagEl = document.querySelector("#ptag");
+        yesButtonEl.addEventListener("click", function() {
+
+            ptagEl.innerHTML = "You died."
+        })
+    </script>
 </body>
 </html>
