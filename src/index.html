@@ -7,17 +7,21 @@
 <body>
     <h1>Welcome to Bartholomew's Adventure!</h1>
     <h3>You are Bartholomew who *complicated backstory* and lives in a house on a cloud.</h3>
-    <p id="ptag">You just woke up, what a beautiful day! Are you going to go outside?</p>
-    <button id="yesbutton">YES!</button> <button id="nobutton">no.</button>
+    <p id="ptag"></p>
+    <button id="firstbutton"></button> <button id="secondbutton"></button>
 
     <script>
 
+        var firstButtonEl = document.querySelector("#firstbutton");
+        var secondButtonEl = document.querySelector("#secondbutton");
+        var ptagEl = document.querySelector("#ptag");
+
         var story = {
-            question: "Will you brush your teeth?,
+            question: "You just woke up, what a beautiful day! Will you brush your teeth?",
                     yes: {
                         question: "Healthy! What will you eat for breakfast?",
                             candy: {
-                                question: "You die of dieabetes."
+                                question: "You die of diabetes."
                             },
                             eggs: {
                                 question: "Good choice! How will you spend the rest of your day?",
@@ -34,19 +38,17 @@
                     },
         }
 
+        console.log(story);
 
 
 
 
-        var yesButtonEl = document.querySelector("#yesbutton");
-        var noButtonEl = document.querySelector("#nobutton");
-        var ptagEl = document.querySelector("#ptag");
 
-        yesButtonEl.addEventListener("click", function() {
+        firstButton.addEventListener("click", function() {
             ptagEl.innerHTML = "You died."
         });
 
-        noButtonEl.addEventListener("click", function() {
+        secondButton.addEventListener("click", function() {
             ptagEl.innerHTML = "Good choice. You live!"
         });
     </script>
